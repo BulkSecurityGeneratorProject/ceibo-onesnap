@@ -1,8 +1,0 @@
-cl/onesnap/angulartest/web/rest/AuditResourceIntTest.class
-cl/onesnap/angulartest/web/rest/TestUtil.class
-cl/onesnap/angulartest/web/rest/AccountResourceIntTest.class
-cl/onesnap/angulartest/cucumber/UserStepDefs.class
-cl/onesnap/angulartest/service/UserServiceIntTest.class
-cl/onesnap/angulartest/web/rest/UserResourceIntTest.class
-cl/onesnap/angulartest/cucumber/CucumberTest.class
-cl/onesnap/angulartest/security/SecurityUtilsUnitTest.class
