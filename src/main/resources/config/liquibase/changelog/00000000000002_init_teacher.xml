@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property dbms="mysql,h2" name="now" value="now()" />
+    <property dbms="postgresql" name="now" value="current_timestamp" />
+    <property dbms="oracle" name="now" value="sysdate" />
+    <property dbms="mysql,h2,postgresql,oracle" name="autoIncrement" value="true" />
+    <property dbms="postgresql, h2" name="floatType" value="float4" />
+    <property dbms="mysql, oracle" name="floatType" value="float" />
+    <changeSet id="00000000000002" author="angularTest">
+        <createTable tableName="teacher">
+            <column autoIncrement="${autoIncrement}" type="bigint" name="id">
+                <constraints primaryKey="true" />
+            </column>
+            <column type="varchar(255)" name="first_name" />
+            <column type="varchar(255)" name="last_name" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

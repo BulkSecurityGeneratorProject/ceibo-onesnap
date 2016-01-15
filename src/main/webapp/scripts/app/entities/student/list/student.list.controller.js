@@ -1,0 +1,42 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
+/// <reference path="../../../commons/subscriptions.service.ts" />
+var AngularTest;
+(function (AngularTest) {
+    var Student;
+    (function (Student) {
+        'use strict';
+        var StudentListController = (function () {
+            function StudentListController(StudentService, StreamsService) {
+                var _this = this;
+                this.StudentService = StudentService;
+                this.StreamsService = StreamsService;
+                StudentService.query({ page: 0, size: 20 });
+                this.studentThread = this.StreamsService.getStream('/api/student');
+                this.studentThread.subscribe(function (notification) {
+                    _this.studentList = notification.data;
+                });
+                this.studentConf = [
+                    {
+                        "sort": true,
+                        "key": "firstName",
+                        "label": "First Name"
+                    },
+                    {
+                        "sort": true,
+                        "key": "lastName",
+                        "label": "Last Name"
+                    }
+                ];
+            }
+            StudentListController.prototype.showStudentLabel = function (chosenStudent) {
+                return 'Estas seguro que quieres eliminar a ' + chosenStudent.name;
+            };
+            StudentListController.$inject = ['StudentService', 'StreamsService'];
+            return StudentListController;
+        })();
+        Student.StudentListController = StudentListController;
+        angular.module('angularTest.student').controller('StudentListController', StudentListController);
+    })(Student = AngularTest.Student || (AngularTest.Student = {}));
+})(AngularTest || (AngularTest = {}));
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVudGl0aWVzL3N0dWRlbnQvbGlzdC9zdHVkZW50Lmxpc3QuY29udHJvbGxlci50cyJdLCJuYW1lcyI6WyJBbmd1bGFyVGVzdCIsIkFuZ3VsYXJUZXN0LlN0dWRlbnQiLCJBbmd1bGFyVGVzdC5TdHVkZW50LlN0dWRlbnRMaXN0Q29udHJvbGxlciIsIkFuZ3VsYXJUZXN0LlN0dWRlbnQuU3R1ZGVudExpc3RDb250cm9sbGVyLmNvbnN0cnVjdG9yIiwiQW5ndWxhclRlc3QuU3R1ZGVudC5TdHVkZW50TGlzdENvbnRyb2xsZXIuc2hvd1N0dWRlbnRMYWJlbCJdLCJtYXBwaW5ncyI6IkFBQUEsd0RBQXdEO0FBQ3hELGtFQUFrRTtBQUVsRSxJQUFPLFdBQVcsQ0EyQ2pCO0FBM0NELFdBQU8sV0FBVztJQUFDQSxJQUFBQSxPQUFPQSxDQTJDekJBO0lBM0NrQkEsV0FBQUEsT0FBT0EsRUFBQ0EsQ0FBQ0E7UUFDeEJDLFlBQVlBLENBQUNBO1FBRWJBLElBQWFBLHFCQUFxQkE7WUFVOUJDLFNBVlNBLHFCQUFxQkEsQ0FVWEEsY0FBY0EsRUFBVUEsY0FBOEJBO2dCQVY3RUMsaUJBb0NDQTtnQkExQnNCQSxtQkFBY0EsR0FBZEEsY0FBY0EsQ0FBQUE7Z0JBQVVBLG1CQUFjQSxHQUFkQSxjQUFjQSxDQUFnQkE7Z0JBQ3JFQSxjQUFjQSxDQUFDQSxLQUFLQSxDQUFDQSxFQUFDQSxJQUFJQSxFQUFDQSxDQUFDQSxFQUFFQSxJQUFJQSxFQUFDQSxFQUFFQSxFQUFDQSxDQUFDQSxDQUFDQTtnQkFFeENBLElBQUlBLENBQUNBLGFBQWFBLEdBQUdBLElBQUlBLENBQUNBLGNBQWNBLENBQUNBLFNBQVNBLENBQUNBLGNBQWNBLENBQUNBLENBQUNBO2dCQUVuRUEsSUFBSUEsQ0FBQ0EsYUFBYUEsQ0FBQ0EsU0FBU0EsQ0FBQ0EsVUFBQ0EsWUFBWUE7b0JBQ3RDQSxLQUFJQSxDQUFDQSxXQUFXQSxHQUFHQSxZQUFZQSxDQUFDQSxJQUFJQSxDQUFDQTtnQkFDekNBLENBQUNBLENBQUNBLENBQUNBO2dCQUVIQSxJQUFJQSxDQUFDQSxXQUFXQSxHQUFHQTtvQkFDZkE7d0JBQ0lBLE1BQU1BLEVBQUVBLElBQUlBO3dCQUNaQSxLQUFLQSxFQUFFQSxXQUFXQTt3QkFDbEJBLE9BQU9BLEVBQUVBLFlBQVlBO3FCQUN4QkE7b0JBQ0RBO3dCQUNJQSxNQUFNQSxFQUFFQSxJQUFJQTt3QkFDWkEsS0FBS0EsRUFBRUEsVUFBVUE7d0JBQ2pCQSxPQUFPQSxFQUFFQSxXQUFXQTtxQkFDdkJBO2lCQUNKQSxDQUFBQTtZQUNMQSxDQUFDQTtZQUVERCxnREFBZ0JBLEdBQWhCQSxVQUFpQkEsYUFBYUE7Z0JBQzFCRSxNQUFNQSxDQUFDQSxzQ0FBc0NBLEdBQUdBLGFBQWFBLENBQUNBLElBQUlBLENBQUNBO1lBQ3ZFQSxDQUFDQTtZQWpDTUYsNkJBQU9BLEdBQWtCQSxDQUFDQSxnQkFBZ0JBLEVBQUVBLGdCQUFnQkEsQ0FBQ0EsQ0FBQ0E7WUFrQ3pFQSw0QkFBQ0E7UUFBREEsQ0FwQ0FELEFBb0NDQyxJQUFBRDtRQXBDWUEsNkJBQXFCQSxHQUFyQkEscUJBb0NaQSxDQUFBQTtRQUVEQSxPQUFPQSxDQUFDQSxNQUFNQSxDQUFDQSxxQkFBcUJBLENBQUNBLENBQ2hDQSxVQUFVQSxDQUFDQSx1QkFBdUJBLEVBQUVBLHFCQUFxQkEsQ0FBQ0EsQ0FBQ0E7SUFDcEVBLENBQUNBLEVBM0NrQkQsT0FBT0EsR0FBUEEsbUJBQU9BLEtBQVBBLG1CQUFPQSxRQTJDekJBO0FBQURBLENBQUNBLEVBM0NNLFdBQVcsS0FBWCxXQUFXLFFBMkNqQiIsImZpbGUiOiJlbnRpdGllcy9zdHVkZW50L2xpc3Qvc3R1ZGVudC5saXN0LmNvbnRyb2xsZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vLi4vLi4vLi4vdHlwaW5ncy90c2QuZC50c1wiIC8+XG4vLy8gPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vLi4vY29tbW9ucy9zdWJzY3JpcHRpb25zLnNlcnZpY2UudHNcIiAvPlxuXG5tb2R1bGUgQW5ndWxhclRlc3QuU3R1ZGVudCB7XG4gICAgJ3VzZSBzdHJpY3QnO1xuXG4gICAgZXhwb3J0IGNsYXNzIFN0dWRlbnRMaXN0Q29udHJvbGxlciB7XG4gICAgXG4gICAgICAgIHN0YXRpYyAkaW5qZWN0OiBBcnJheTxzdHJpbmc+ID0gWydTdHVkZW50U2VydmljZScsICdTdHJlYW1zU2VydmljZSddO1xuICAgIFxuICAgICAgICBwdWJsaWMgc3R1ZGVudENvbmY7XG4gICAgXG4gICAgICAgIHB1YmxpYyBzdHVkZW50TGlzdDogQXJyYXk8YW55PjtcbiAgICBcbiAgICAgICAgcHVibGljIHN0dWRlbnRUaHJlYWQ7XG4gICAgXG4gICAgICAgIGNvbnN0cnVjdG9yKHB1YmxpYyBTdHVkZW50U2VydmljZSwgcHJpdmF0ZSBTdHJlYW1zU2VydmljZTogU3RyZWFtc1NlcnZpY2UpIHtcbiAgICAgICAgICAgIFN0dWRlbnRTZXJ2aWNlLnF1ZXJ5KHtwYWdlOjAsIHNpemU6MjB9KTtcbiAgICAgICAgICAgIFxuICAgICAgICAgICAgdGhpcy5zdHVkZW50VGhyZWFkID0gdGhpcy5TdHJlYW1zU2VydmljZS5nZXRTdHJlYW0oJy9hcGkvc3R1ZGVudCcpO1xuICAgICAgICAgICAgXG4gICAgICAgICAgICB0aGlzLnN0dWRlbnRUaHJlYWQuc3Vic2NyaWJlKChub3RpZmljYXRpb24pID0+IHtcbiAgICAgICAgICAgICAgICB0aGlzLnN0dWRlbnRMaXN0ID0gbm90aWZpY2F0aW9uLmRhdGE7XG4gICAgICAgICAgICB9KTtcbiAgICAgICAgICAgIFxuICAgICAgICAgICAgdGhpcy5zdHVkZW50Q29uZiA9IFtcbiAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgIFwic29ydFwiOiB0cnVlLFxuICAgICAgICAgICAgICAgICAgICBcImtleVwiOiBcImZpcnN0TmFtZVwiLFxuICAgICAgICAgICAgICAgICAgICBcImxhYmVsXCI6IFwiRmlyc3QgTmFtZVwiXG4gICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgIFwic29ydFwiOiB0cnVlLFxuICAgICAgICAgICAgICAgICAgICBcImtleVwiOiBcImxhc3ROYW1lXCIsXG4gICAgICAgICAgICAgICAgICAgIFwibGFiZWxcIjogXCJMYXN0IE5hbWVcIlxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIF1cbiAgICAgICAgfVxuICAgIFxuICAgICAgICBzaG93U3R1ZGVudExhYmVsKGNob3NlblN0dWRlbnQpIHtcbiAgICAgICAgICAgIHJldHVybiAnRXN0YXMgc2VndXJvIHF1ZSBxdWllcmVzIGVsaW1pbmFyIGEgJyArIGNob3NlblN0dWRlbnQubmFtZTtcbiAgICAgICAgfVxuICAgIH1cbiAgICBcbiAgICBhbmd1bGFyLm1vZHVsZSgnYW5ndWxhclRlc3Quc3R1ZGVudCcpXG4gICAgICAgIC5jb250cm9sbGVyKCdTdHVkZW50TGlzdENvbnRyb2xsZXInLCBTdHVkZW50TGlzdENvbnRyb2xsZXIpO1xufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property dbms="mysql,h2" name="now" value="now()" />
+    <property dbms="postgresql" name="now" value="current_timestamp" />
+    <property dbms="oracle" name="now" value="sysdate" />
+    <property dbms="mysql,h2,postgresql,oracle" name="autoIncrement" value="true" />
+    <property dbms="postgresql, h2" name="floatType" value="float4" />
+    <property dbms="mysql, oracle" name="floatType" value="float" />
+    <changeSet id="00000000000004" author="angularTest">
+        <createTable tableName="course">
+            <column autoIncrement="${autoIncrement}" type="bigint" name="id">
+                <constraints primaryKey="true" />
+            </column>
+            <column type="varchar(255)" name="name" />
+            <column type="bigint" name="teacher_id" />
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="teacher_id" baseTableName="course" constraintName="fk_course_teacher_id" referencedColumnNames="id" referencedTableName="teacher" />
+        <createTable tableName="course_student">
+            <column type="bigint" name="course_id">
+                <constraints nullable="false" />
+            </column>
+            <column type="bigint" name="student_id">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="course_id, student_id" tableName="course_student" />
+        <addForeignKeyConstraint baseColumnNames="course_id" baseTableName="course_student" constraintName="fk_course_id" referencedColumnNames="id" referencedTableName="course" />
+        <addForeignKeyConstraint baseColumnNames="student_id" baseTableName="course_student" constraintName="fk_student_id" referencedColumnNames="id" referencedTableName="student" />
+    </changeSet>
+</databaseChangeLog>

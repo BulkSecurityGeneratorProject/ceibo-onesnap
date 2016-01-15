@@ -1,0 +1,281 @@
+{
+  "groups": [
+    {
+      "name": "angulartest",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties"
+    },
+    {
+      "name": "angulartest.async",
+      "sourceMethod": "getAsync()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Async"
+    },
+    {
+      "name": "angulartest.cache",
+      "sourceMethod": "getCache()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Cache"
+    },
+    {
+      "name": "angulartest.cache.hazelcast",
+      "sourceMethod": "getHazelcast()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Cache",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Cache$Hazelcast"
+    },
+    {
+      "name": "angulartest.datasource",
+      "sourceMethod": "getDatasource()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Datasource"
+    },
+    {
+      "name": "angulartest.http",
+      "sourceMethod": "getHttp()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Http"
+    },
+    {
+      "name": "angulartest.http.cache",
+      "sourceMethod": "getCache()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Http",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Http$Cache"
+    },
+    {
+      "name": "angulartest.mail",
+      "sourceMethod": "getMail()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Mail"
+    },
+    {
+      "name": "angulartest.metrics",
+      "sourceMethod": "getMetrics()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics"
+    },
+    {
+      "name": "angulartest.metrics.graphite",
+      "sourceMethod": "getGraphite()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Graphite"
+    },
+    {
+      "name": "angulartest.metrics.jmx",
+      "sourceMethod": "getJmx()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Jmx"
+    },
+    {
+      "name": "angulartest.metrics.spark",
+      "sourceMethod": "getSpark()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Spark"
+    },
+    {
+      "name": "angulartest.security",
+      "sourceMethod": "getSecurity()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Security"
+    },
+    {
+      "name": "angulartest.security.authentication",
+      "sourceMethod": "getAuthentication()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Authentication"
+    },
+    {
+      "name": "angulartest.security.authentication.oauth",
+      "sourceMethod": "getOauth()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Authentication",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Authentication$Oauth"
+    },
+    {
+      "name": "angulartest.security.rememberme",
+      "sourceMethod": "getRememberme()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Rememberme"
+    },
+    {
+      "name": "angulartest.swagger",
+      "sourceMethod": "getSwagger()",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties",
+      "type": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger"
+    }
+  ],
+  "hints": [],
+  "properties": [
+    {
+      "defaultValue": 2,
+      "name": "angulartest.async.core-pool-size",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 50,
+      "name": "angulartest.async.max-pool-size",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 10000,
+      "name": "angulartest.async.queue-capacity",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Async",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 1,
+      "name": "angulartest.cache.hazelcast.backup-count",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Cache$Hazelcast",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 3600,
+      "name": "angulartest.cache.time-to-live-seconds",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Cache",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": true,
+      "name": "angulartest.datasource.cache-prep-stmts",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Datasource",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": 250,
+      "name": "angulartest.datasource.prep-stmt-cache-size",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Datasource",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": 2048,
+      "name": "angulartest.datasource.prep-stmt-cache-sql-limit",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Datasource",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": true,
+      "name": "angulartest.datasource.use-server-prep-stmts",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Datasource",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": 31,
+      "name": "angulartest.http.cache.time-to-live-in-days",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Http$Cache",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "AngularTest@localhost",
+      "name": "angulartest.mail.from",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Mail",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": false,
+      "name": "angulartest.metrics.graphite.enabled",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Graphite",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "angulartest.metrics.graphite.host",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Graphite",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 2003,
+      "name": "angulartest.metrics.graphite.port",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Graphite",
+      "type": "java.lang.Integer"
+    },
+    {
+      "defaultValue": "AngularTest",
+      "name": "angulartest.metrics.graphite.prefix",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Graphite",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": true,
+      "name": "angulartest.metrics.jmx.enabled",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Jmx",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": false,
+      "name": "angulartest.metrics.spark.enabled",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Spark",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "defaultValue": "localhost",
+      "name": "angulartest.metrics.spark.host",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Spark",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 9999,
+      "name": "angulartest.metrics.spark.port",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Metrics$Spark",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "angulartest.security.authentication.oauth.clientid",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Authentication$Oauth",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "angulartest.security.authentication.oauth.secret",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Authentication$Oauth",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": 1800,
+      "name": "angulartest.security.authentication.oauth.token-validity-in-seconds",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Authentication$Oauth",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "angulartest.security.rememberme.key",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Security$Rememberme",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "angulartest.swagger.contact",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "AngularTest API documentation",
+      "name": "angulartest.swagger.description",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "angulartest.swagger.license",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "angulartest.swagger.license-url",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "angulartest.swagger.terms-of-service-url",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "AngularTest API",
+      "name": "angulartest.swagger.title",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    },
+    {
+      "defaultValue": "0.0.1",
+      "name": "angulartest.swagger.version",
+      "sourceType": "cl.onesnap.angulartest.config.AngularTestProperties$Swagger",
+      "type": "java.lang.String"
+    }
+  ]
+}

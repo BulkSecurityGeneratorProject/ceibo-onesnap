@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property dbms="mysql,h2" name="now" value="now()" />
+    <property dbms="postgresql" name="now" value="current_timestamp" />
+    <property dbms="oracle" name="now" value="sysdate" />
+    <property dbms="mysql,h2,postgresql,oracle" name="autoIncrement" value="true" />
+    <property dbms="postgresql, h2" name="floatType" value="float4" />
+    <property dbms="mysql, oracle" name="floatType" value="float" />
+    <changeSet id="00000000000005" author="angularTest">
+        <createTable tableName="user_custom">
+            <column autoIncrement="${autoIncrement}" type="bigint" name="id">
+                <constraints primaryKey="true" />
+            </column>
+            <column type="varchar(255)" name="login">
+                <constraints unique="true" nullable="false" />
+            </column>
+            <column type="varchar(255)" name="password_hash">
+                <constraints nullable="false" />
+            </column>
+            <column type="boolean" name="activated">
+                <constraints nullable="false" />
+            </column>
+            <column type="varchar(255)" name="lang_key" />
+            <column type="varchar(255)" name="email">
+                <constraints unique="true" />
+            </column>
+            <column type="varchar(255)" name="activation_key" />
+            <column type="varchar(255)" name="reset_key" />
+            <column type="timestamp" name="reset_date" />
+            <column type="varchar(255)" name="created_by">
+                <constraints nullable="false" />
+            </column>
+            <column type="timestamp" name="created_date">
+                <constraints nullable="false" />
+            </column>
+            <column type="varchar(255)" name="last_modified_by" />
+            <column type="timestamp" name="last_modified_date" />
+        </createTable>
+        <createIndex tableName="user_custom" unique="true" indexName="idx_user_custom_login">
+            <column type="varchar(255)" name="login" />
+        </createIndex>
+        <createTable tableName="user_custom_authority_custom">
+            <column type="bigint" name="user_custom_id">
+                <constraints nullable="false" />
+            </column>
+            <column type="varchar(255)" name="authority_custom_name">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="user_custom_id, authority_custom_name" tableName="user_custom_authority_custom" />
+        <addForeignKeyConstraint baseColumnNames="user_custom_id" baseTableName="user_custom_authority_custom" constraintName="fk_user_custom_id" referencedColumnNames="id" referencedTableName="user_custom" />
+        <addForeignKeyConstraint baseColumnNames="authority_custom_name" baseTableName="user_custom_authority_custom" constraintName="fk_authority_custom_name" referencedColumnNames="name" referencedTableName="authority_custom" />
+        <createIndex tableName="user_custom" unique="true" indexName="idx_user_custom_email">
+            <column type="varchar(255)" name="email" />
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

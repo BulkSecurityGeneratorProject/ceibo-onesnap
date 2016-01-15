@@ -1,0 +1,10 @@
+<entity-list thread="vm.studentThread" list="vm.studentList" entity-conf="vm.studentConf"
+             options='{
+                "apiEndpoint": "/api/student",
+                "deletion": {
+                    "showLabel": vm.showStudentLabel,
+                    "service": vm.StudentService.remove
+                },
+                "editionSref": "app.student.edit"
+            }'
+></entity-list>

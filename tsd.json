@@ -1,0 +1,21 @@
+{
+    "bundle": "src/main/webapp/typings/tsd.d.ts", 
+    "installed": {
+        "rx/rx-lite.d.ts": {
+            "commit": "2d84e48e3b4ecb47b8c3f1a6c769e9293bce1196"
+        }, 
+        "jquery/jquery.d.ts": {
+            "commit": "2d84e48e3b4ecb47b8c3f1a6c769e9293bce1196"
+        }, 
+        "rx/rx.d.ts": {
+            "commit": "2d84e48e3b4ecb47b8c3f1a6c769e9293bce1196"
+        }, 
+        "angularjs/angular.d.ts": {
+            "commit": "2d84e48e3b4ecb47b8c3f1a6c769e9293bce1196"
+        }
+    }, 
+    "repo": "borisyankov/DefinitelyTyped", 
+    "version": "v4", 
+    "path": "src/main/webapp/typings", 
+    "ref": "1.4.1"
+}

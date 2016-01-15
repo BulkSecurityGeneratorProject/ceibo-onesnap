@@ -1,0 +1,11 @@
+/// <reference path="../../../typings/tsd.d.ts" />
+var AngularTest;
+(function (AngularTest) {
+    var Auth;
+    (function (Auth) {
+        'use strict';
+        angular.module('angularTest.auth', []);
+    })(Auth = AngularTest.Auth || (AngularTest.Auth = {}));
+})(AngularTest || (AngularTest = {}));
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF1dGgvYXV0aC5tb2R1bGUudHMiXSwibmFtZXMiOlsiQW5ndWxhclRlc3QiLCJBbmd1bGFyVGVzdC5BdXRoIl0sIm1hcHBpbmdzIjoiQUFBQSxrREFBa0Q7QUFFbEQsSUFBTyxXQUFXLENBSWpCO0FBSkQsV0FBTyxXQUFXO0lBQUNBLElBQUFBLElBQUlBLENBSXRCQTtJQUprQkEsV0FBQUEsSUFBSUEsRUFBQ0EsQ0FBQ0E7UUFDckJDLFlBQVlBLENBQUNBO1FBRWJBLE9BQU9BLENBQUNBLE1BQU1BLENBQUNBLGtCQUFrQkEsRUFBRUEsRUFBRUEsQ0FBQ0EsQ0FBQ0E7SUFDM0NBLENBQUNBLEVBSmtCRCxJQUFJQSxHQUFKQSxnQkFBSUEsS0FBSkEsZ0JBQUlBLFFBSXRCQTtBQUFEQSxDQUFDQSxFQUpNLFdBQVcsS0FBWCxXQUFXLFFBSWpCIiwiZmlsZSI6ImF1dGgvYXV0aC5tb2R1bGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vLi4vdHlwaW5ncy90c2QuZC50c1wiIC8+XG5cbm1vZHVsZSBBbmd1bGFyVGVzdC5BdXRoIHtcbiAgICAndXNlIHN0cmljdCc7XG5cbiAgICBhbmd1bGFyLm1vZHVsZSgnYW5ndWxhclRlc3QuYXV0aCcsIFtdKTtcbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
