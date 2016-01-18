@@ -248,8 +248,8 @@ gulp.task('tsd', ['tsd:install']);
 gulp.task('scripts:app', ['scripts:components'], function () {
     return gulp.src(path.join(yeoman.app, '/ts-app/app/**/*.ts'))
         .pipe($.sourcemaps.init())
-        .pipe($.tslint())
-        .pipe($.tslint.report('prose', { emitError: false }))
+        // .pipe($.tslint())
+        // .pipe($.tslint.report('prose', { emitError: false }))
         .pipe($.typescript(tsProject)).on('error', _errorHandler('TypeScript'))
     //.pipe($.concat('index.module.js'))
         .pipe($.sourcemaps.write())
@@ -261,8 +261,8 @@ gulp.task('scripts:app', ['scripts:components'], function () {
 gulp.task('scripts:components', function () {
     return gulp.src(path.join(yeoman.app, '/ts-app/components/**/*.ts'))
         .pipe($.sourcemaps.init())
-        .pipe($.tslint())
-        .pipe($.tslint.report('prose', { emitError: false }))
+        // .pipe($.tslint())
+        // .pipe($.tslint.report('prose', { emitError: false }))
         .pipe($.typescript(tsProject)).on('error', _errorHandler('TypeScript'))
     //.pipe($.concat('index.module.js'))
         .pipe($.sourcemaps.write())
@@ -383,6 +383,7 @@ gulp.task('watch', function () {
     yeoman.app + 'scripts/app/**', yeoman.app + 'scripts/components/**',
     yeoman.app + 'ts-app/app/**', yeoman.app + 'ts-app/components/**',
     yeoman.app + 'i18n/**']).on('change', browserSync.reload);
+    gulp.watch(yeoman.app + 'ts-app/app/**', ['scripts']);
 });
 
 gulp.task('wiredep', ['wiredep:test', 'wiredep:app']);
